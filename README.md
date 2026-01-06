@@ -55,7 +55,7 @@ These results indicate a significant reduction of noise while maintaining image 
 ### Qualitative Results
 Visual comparison between the **noisy input**, **CNN-denoised output**, and **ground-truth image**:
 
-![Denoising Results](images/denoising_comparison.png)
+![Denoising Results](denoising_comparison.png)
 
 The model effectively removes high-frequency noise while preserving the overall structure and colors of the images.  
 Some smoothing of fine textures can still be observed, illustrating the trade-off between noise reduction and detail preservation.
