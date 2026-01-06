@@ -87,12 +87,16 @@ The notebook covers:
 - CNN training
 - Evaluation and visualization
 
+---
+
 ## Skills Demonstrated
 - Computer Vision
 - Deep Learning with CNNs
 - Image denoising
 - Model evaluation (PSNR, MSE)
 - Experimental analysis and visualization
+
+---
 
 ## Author
 Maëla Brelivet
