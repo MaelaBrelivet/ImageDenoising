@@ -1,45 +1,99 @@
-# Image Denoising with CNN
+# Image Denoising with Convolutional Neural Networks (CNN)
 
-## Description
-This project implements an image denoising pipeline using **Convolutional Neural Networks (CNNs)**. The goal is to remove noise from smartphone images while preserving image details. The dataset used is the **Smartphone Image Denoising Dataset (SIDD)**.
+## Overview
+This project focuses on **image denoising using Convolutional Neural Networks (CNNs)** applied to real-world smartphone images.  
+The goal is to remove noise while preserving important visual details such as textures, edges, and colors — a core challenge in **computational photography** and **computer vision**.
 
-The project is implemented in **Python** using **TensorFlow/Keras**, **OpenCV**, and **NumPy**.
+The project uses the **Smartphone Image Denoising Dataset (SIDD)** and implements a complete deep learning pipeline, from data preprocessing to qualitative and quantitative evaluation.
 
-## Features
-- Denoising of noisy RGB images using a CNN.
-- Gaussian noise augmentation.
-- Training, validation, and testing split.
-- Evaluation with **PSNR** and **MSE** metrics.
-- Visualization of noisy, denoised, and original images.
+---
+
+## Motivation
+Smartphone images often suffer from significant noise, especially in **low-light conditions**.  
+Traditional denoising algorithms tend to oversmooth images, while deep learning approaches can **learn noise distributions directly from data**, leading to better reconstruction quality.
+
+---
+
+## Key Features
+- CNN-based denoising of RGB images
+- Gaussian noise augmentation
+- Custom training, validation, and test split
+- Quantitative and qualitative evaluation
+- Fully reproducible experiment in a single notebook
+
+---
 
 ## Dataset
-- Source: [Smartphone Image Denoising Dataset (SIDD)](https://www.kaggle.com/datasets/rajat95gupta/smartphone-image-denoising-dataset)
-- Dataset contains pairs of noisy and ground-truth images.
-- Images are resized to **256x256** for training.
+- **Name**: Smartphone Image Denoising Dataset (SIDD)
+- **Source**: https://www.kaggle.com/datasets/rajat95gupta/smartphone-image-denoising-dataset
+- Paired **noisy / ground-truth** images
+- Images resized to **256×256**
 
-## Model
-- Sequential CNN with multiple convolutional layers.
-- ReLU activations for hidden layers, Sigmoid for output.
-- Optimizer: Adam.
-- Loss: Mean Squared Error (MSE).
+---
 
-## Usage
+## Model Architecture
+- Sequential **Convolutional Neural Network**
+- ReLU activations for hidden layers
+- Sigmoid activation for output layer
+- Optimizer: **Adam**
+- Loss function: **Mean Squared Error (MSE)**
 
-1. **Install dependencies**:
+---
 
+## Results
+
+### Quantitative Results
+The following metrics are computed on the test set:
+
+- **Average PSNR**: **27.79 dB**
+- **Average MSE**: **0.0020**
+
+These results indicate a significant reduction of noise while maintaining image fidelity.
+
+---
+
+### Qualitative Results
+Visual comparison between the **noisy input**, **CNN-denoised output**, and **ground-truth image**:
+
+![Denoising Results](images/denoising_comparison.png)
+
+The model effectively removes high-frequency noise while preserving the overall structure and colors of the images.  
+Some smoothing of fine textures can still be observed, illustrating the trade-off between noise reduction and detail preservation.
+
+---
+
+## Technologies Used
+- **Python**
+- **TensorFlow / Keras**
+- **OpenCV**
+- **NumPy**
+- **Matplotlib**
+- **scikit-image**
+- **tqdm**
+
+---
+
+## Installation & Usage
+
+### 1. Install dependencies
 ```bash
 pip install tensorflow opencv-python matplotlib numpy scikit-image tqdm
 ```
 
-2. **Run the notebook**:
-- Load and preprocess the dataset.
-- Train the CNN on noisy vs. original images.
-- Evaluate on test images.
-- Visualize results using matplotlib.
+### 2. Run the notebook
+The notebook covers:
+- Dataset loading and preprocessing
+- Noise augmentation
+- CNN training
+- Evaluation and visualization
 
-## Results
-- Average PSNR and MSE are calculated on the test set.
-- Sample results show noisy, denoised, and original images side by side for comparison.
+## Skills Demonstrated
+- Computer Vision
+- Deep Learning with CNNs
+- Image denoising
+- Model evaluation (PSNR, MSE)
+- Experimental analysis and visualization
 
 ## Author
-Maëla Brelivet – Data Science Student, EURECOM
+Maëla Brelivet
+Data Science Student @ EURECOM
